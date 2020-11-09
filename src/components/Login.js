@@ -5,14 +5,13 @@ import image from '../assets/images/ourlogo.png';
 const Login = () => {
   return(
     <section className="Form my-4 mx-5">
-      <div clasName="container">
+      <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-5">
             <img src={image} class="img-fluid" alt=""/>
           </div>
           <div className="col-lg-7 px-5 pt-5">
-            <h1 className="font-weight-bold py-3">aRoomi</h1>
-            <h4>Sign into your account</h4>
+            <h4 className="font-weight-bold py-3">Sign into your account</h4>
             <form>
               <div className="form-row">
                 <div className="col-lg-7">

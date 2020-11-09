@@ -1,29 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
+import image from '../assets/images/ourlogo.png';
 // import { Link }from 'react-router-dom';
 
-const CreateAccount = () => {
-  return (
-    <form>
-      <div className="form-group">
-        <label for="firstname">First Name</label>
-        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="first name"/>
-      </div>
-      <div className="form-group">
-        <label for="lastname">Last Name</label>
-        <input type="password" className="form-control" id="exampleInputPassword1"placeholder="last name"/>
-      </div>
-      <div className="form-group">
-        <label for="username">Username</label>
-        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="username"/>
-      </div>
-      <div className="form-group">
-        <label for="password">Password</label>
-        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="******"/>
-      </div>
-   
-      <button type="submit" className="btn btn-primary">Submit</button>
-    </form>
-  )
+
+class CreateAccount extends Component {
+
+
+  submitHandler = (event) => {
+    event.preventDefault()
+    console.log(event.target.value)
+  }
+
+  render() {
+    return (
+      <section className="Form my-4 mx-5">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-5">
+              <img src={image} class="img-fluid" alt="" />
+            </div>
+            <div className="col-lg-7 px-5 pt-5">
+              <h3 className="font-weight-bold py-3">Create Account</h3>
+
+              <form>
+              <div class="form-group">
+                  <label for="firstname">First Name</label>
+                  <input type="text" class="form-control" id="firstname" placeholder="Enter First Name"/>
+                </div>
+
+                <div class="form-group">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" class="form-control" id="lastname"placeholder="Enter Last Name"/>
+                </div>
+
+                <div class="form-group">
+                  <label for="Username">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter Username"/>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="*******"/>
+                </div>
+              
+                <button type="submit" class="btn1">Submit</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 }
 
 export default CreateAccount; 
