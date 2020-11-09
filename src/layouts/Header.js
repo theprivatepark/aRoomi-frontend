@@ -1,6 +1,5 @@
 import React from 'react';
 import image from '../assets/images/aroomi.png'
-import LoggedInNavBar from '../components/LoggedInNavBar';
 
 const Header = props => {
   return (
