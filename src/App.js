@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import Body from './containers/Body';
-import Header from './layouts/Header'
+import Header from './layouts/Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-rom'; 
 
 import './App.css';
 
