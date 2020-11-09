@@ -1,20 +1,36 @@
 import React from 'react'
 import image from '../assets/images/landing-page.png'
-
+import styled from 'styled-components'
 
 const SearchPage = props => {
+  const Image = styled.img`
+    width: 100%;  
+  `
   return (
-    <div>
-      <nav class="navbar navbar-light bg-light">
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" placeholder="Search Listings By School"/>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    // <div className="row" id="landing-page">
+    // <div className="col">
+    <>
+      <div className="row">
+        <div className="col">
+          <form>
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Search Listings By School" aria-label="Search Listings By School" aria-describedby="basic-addon2" />
+              <div className="input-group-append">
+                <button className="btn btn-warning" type="button">Search</button>
+              </div>
+            </div>
           </form>
-        </nav>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <Image src={image} />
+        </div>
+      </div>
+    </>
+    //   </div>
 
-      <img src={image}/>
-     
-    </div>
+    // </div>
   )
 
 }

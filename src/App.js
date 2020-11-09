@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Body from './containers/Body';
+import Header from './layouts/Header'
 
 import './App.css';
 
-class App extends Component {
-  render() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false) //useState returns an array. HOOKS
+  const onClickHandler = () => {
+    setIsLoggedIn(!isLoggedIn)
+  }
     return (
       <div className="App">
-       <Body/>
+      <Header isLoggedIn={isLoggedIn}/>
+      {/* <button onClick={onClickHandler}>Login/Logout!</button> */}
+      <Body/> 
       </div>
     );
-  }
+  
 }
 
 export default App;

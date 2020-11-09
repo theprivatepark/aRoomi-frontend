@@ -1,2 +1,12 @@
 @import "bootstrap";
 
+/* searchpage */
+
+#landing-page-img {
+  width: 100%;
+  height: auto;
+}
+
+.align-right {
+  text-align: end;
+}
