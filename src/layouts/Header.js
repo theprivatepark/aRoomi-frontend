@@ -8,28 +8,21 @@ const Header = props => {
         <div className="col">
           <img src={image} id="landing-page-img" />
         </div>
-
         <div className="col-8">
-
         </div>
-
         <div className="col-3">
           {props.isLoggedIn ? <div className="align-right">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-
               <label class="btn btn-primary">
                 <input type="radio" /> Profile
               </label>
-
               <label class="btn btn-link">
                 <input type="radio" /> View Your Listing
               </label>
             </div>
-          </div> 
-          : null}
-          
+          </div>
+            : null}
         </div>
-
       </div>
     </div>
   )

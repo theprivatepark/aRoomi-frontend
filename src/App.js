@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
 import Body from './containers/Body';
 import Header from './layouts/Header';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-rom'; 
-
+import Login from './components/Login';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import './App.css';
 
 const App = () => {
@@ -11,11 +11,14 @@ const App = () => {
     setIsLoggedIn(!isLoggedIn)
   }
     return (
-      <div className="App">
-      <Header isLoggedIn={isLoggedIn}/>
-      {/* <button onClick={onClickHandler}>Login/Logout!</button> */}
-      <Body/> 
-      </div>
+      <Router>
+        <div className="App">
+        <Header isLoggedIn={isLoggedIn}/>
+        <button onClick={onClickHandler}>TESTING Login/Logout!</button>
+        <Body/> 
+        <Login/>
+        </div>
+      </Router>
     );
   
 }
