@@ -12,7 +12,7 @@ const SearchPage = props => {
     <>
       <div className="row">
         <div className="col">
-          <form>
+          <form onChange={props.theySearched}>
             <div className="input-group mb-3">
               <input type="text" className="form-control" placeholder="Search Listings By School" aria-label="Search Listings By School" aria-describedby="basic-addon2" />
               <div className="input-group-append">
@@ -20,6 +20,7 @@ const SearchPage = props => {
               </div>
             </div>
           </form>
+
         </div>
       </div>
       <div className="row">

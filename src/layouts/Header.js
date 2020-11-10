@@ -12,7 +12,7 @@ const Header = props => {
         <div className="col-8">
         </div>
         <div className="col-3">
-          {props.isLoggedIn ? <div className="align-right">
+          <div className="align-right">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
               <label className="btn btn-primary">
                 <input type="radio" /> Profile
@@ -20,9 +20,11 @@ const Header = props => {
               <label className="btn btn-link">
                 <input type="radio" /> Create Listing
               </label>
+              <label className="btn btn-link">
+                <input type="radio" /> Logout
+              </label>
             </div>
           </div>
-            : null}
         </div>
       </div>
 

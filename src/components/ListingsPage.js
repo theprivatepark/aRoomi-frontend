@@ -1,13 +1,13 @@
 import React from 'react';
 import SchoolListings from './SchoolListings';
-import SingleListing from './SingleListing';
+import ListingShow from './ListingShow';
 
 const ListingsPage = () => {
   return (
     <div className="container">
       <div className="row">
         <SchoolListings />
-        <SingleListing/>
+        <ListingShow/>
       </div>
     </div>
   )

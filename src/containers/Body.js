@@ -5,7 +5,7 @@ class Body extends Component {
   render() {
     return(
       <div className="container">
-      <SearchPage />
+      <SearchPage theySearched={this.props.theySearched}/>
       </div>
     )
   }
