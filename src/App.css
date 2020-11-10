@@ -54,8 +54,8 @@
 
 /* listings container */
 .anyClass {
-  height:150px;
-  overflow-y: scroll;
+  height:100%;
+  overflow: auto;
 }
 
 #listings-container {

@@ -11,7 +11,7 @@ const SchoolListings = () => {
           <div className="card mx-4 my-2">Another Listing</div>
           <div className="card mx-4 my-2">Another Listing</div>
           <div className="card mx-4 my-2">Another Listing</div>
-          <div className="card mx-4 my-2">Another Listing</div>
+          
         </div>
 
       </div>

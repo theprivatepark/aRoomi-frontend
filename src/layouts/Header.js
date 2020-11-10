@@ -18,14 +18,14 @@ const Header = props => {
                 <input type="radio" /> Profile
               </label>
               <label class="btn btn-link">
-                <input type="radio" /> View Your Listing
+                <input type="radio" /> Create Listing
               </label>
             </div>
           </div>
             : null}
         </div>
       </div>
-      
+
     </div>
   )
 }
