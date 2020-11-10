@@ -8,7 +8,22 @@ class CreateAccount extends Component {
 
   submitHandler = (event) => {
     event.preventDefault()
-    console.log(event.target.value)
+    const newObj = {
+      first_name: event.target.firstname.value,
+      last_name: event.target.lastname.value,
+      username: event.target.username.value,
+      password: event.target.password.value
+    }
+    
+    fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newObj)
+    }).then(r => r.json())
+    .then(data => console.log(data))
+
   }
 
   render() {
@@ -22,7 +37,7 @@ class CreateAccount extends Component {
             <div className="col-lg-7 px-5 pt-5">
               <h3 className="font-weight-bold py-3">Create Account</h3>
 
-              <form>
+              <form onSubmit={(e) => this.submitHandler(e)}>
               <div class="form-group">
                   <label for="firstname">First Name</label>
                   <input type="text" class="form-control" id="firstname" placeholder="Enter First Name"/>
