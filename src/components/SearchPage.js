@@ -1,39 +1,60 @@
-import React from 'react'
-import image from '../assets/images/landing-page.png'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import image from '../assets/images/landing-page.png';
+import styled from 'styled-components';
+import Select from 'react-select';
 
-const SearchPage = props => {
-  const Image = styled.img`
-    width: 100%;  
-  `
-  return (
-    // <div className="row" id="landing-page">
-    // <div className="col">
-    <>
-      <div className="row">
-        <div className="col">
-          <form onChange={props.theySearched}>
-            <div className="input-group mb-3">
-              <input type="text" className="form-control" placeholder="Search Listings By School" aria-label="Search Listings By School" aria-describedby="basic-addon2" />
-              <div className="input-group-append">
-                <button className="btn btn-warning" type="button">Search</button>
+const Image = styled.img`
+  width: 100%;  
+`
+class SearchPage extends Component {
+
+  state = {
+    colleges: []
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3001/colleges")
+      .then(response => response.json())
+      .then((collegeData) => this.setState({ colleges: collegeData.map(college => {
+        return {value: college.id, label: college.name}
+      }) 
+    }))
+        
+  }
+
+  render() {
+    return (
+      // <div className="row" id="landing-page">
+      // <div className="col">
+      <>
+        <div className="row">
+          <div className="col">
+            <form>
+              <Select 
+                options={this.state.colleges}
+                onChange={(e) => {this.props.handleChange(e)}}
+                placeholder="Search..."
+                openMenuOnClick={false} />
+              <div className="input-group mb-3">
+                <div className="input-group-append">
+
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
 
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <Image src={image} />
+        <div className="row">
+          <div className="col">
+            <Image src={image} />
+          </div>
         </div>
-      </div>
-    </>
-    //   </div>
+      </>
+      //   </div>
 
-    // </div>
-  )
-
+      // </div>
+    )
+  }
 }
 
 export default SearchPage;

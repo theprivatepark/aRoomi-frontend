@@ -5,7 +5,7 @@ class Body extends Component {
   render() {
     return(
       <div className="container">
-      <SearchPage theySearched={this.props.theySearched}/>
+      <SearchPage handleChange={this.props.handleChange}/>
       </div>
     )
   }

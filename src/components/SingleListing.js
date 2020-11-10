@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SingleListing = () => {
+const SingleListing = props => {
   return(
     <div>
-      hey
+      {props.listing.name}
     </div>
   )
 }

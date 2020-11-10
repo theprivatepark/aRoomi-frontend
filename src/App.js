@@ -5,35 +5,47 @@ import Login from './components/Login';
 import ListingsPage from './components/ListingsPage';
 import CreateAccount from './components/CreateAccount';
 import CreateListing from './components/CreatingListing';
+import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
 
   state = {
-    searchedSchool: "",
-    schoolData: [],
+    searchedSchool: null,
     listingsData: []
   }
 
-  theySearched = () => {
-    console.log("hey")
+  componentDidMount = () => {
+    fetch("http://localhost:3001/listings")
+      .then(response => response.json())
+      .then((listingData) => this.setState({ listingsData: listingData }))
   }
 
+  handleChange = (e) => {
+    this.setState({
+      searchedSchool: e.value
+    })
+
+  }
   render() {
+    // if (this.state.searchedSchool) {
+    //   return <Redirect to={'/listings'}/>
+    // }
+    // this.state.searchedSchool ?  <Redirect to='/listings'/> : console.log("boo")
     return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path="/" render={() => <Body theySearched={this.theySearched}/>} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/Create" exact component={CreateAccount} />
-            <Route path="/Listings" exact component={ListingsPage} />
-            <Route path="/CreateListing" exact component={CreateListing} />
-          </Switch>
-        </div>
-      </Router>
+
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" render={() => this.state.searchedSchool ? <Redirect to='/listings'/> : <Body handleChange={this.handleChange} />} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/Create" component={CreateAccount} />
+          <Route exact path="/listings" render={() => <ListingsPage searchedSchool={this.state.searchedSchool} listingsData={this.state.listingsData} />} />
+          <Route exact path="/CreateListing" component={CreateListing} />
+        </Switch>
+      </div>
+
     );
   }
 }
