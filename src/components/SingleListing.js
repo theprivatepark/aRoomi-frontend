@@ -8,7 +8,8 @@ const SingleListing = () => {
         <div className="card-body">
           <div className="row align-items-center">
             <div className="col-3">
-              1 of 2
+              LISTING OWNER'S PHOTO HERE
+              <button type="button" class="btn btn-outline-warning">View Profile</button>
             </div>
             <div className="col">
               <CarouselImg/>         
