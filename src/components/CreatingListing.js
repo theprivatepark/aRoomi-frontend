@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class CreateListing extends Component {
 
   state = {
-    collegeData: []
+    collegeData: [],
+    dropdownCollege: ""
   }
 
   componentDidMount() {
@@ -16,16 +17,28 @@ class CreateListing extends Component {
     })
   }
 
+  handleChange = (e) => {
+    this.setState({ dropdownCollege: e.target.value })
+  }
+
+
   submitHandler = (event) => {
     event.preventDefault()
-    console.log(event.target.price.value)
-    // const newListingObj = {
-      // price: event.target,
-      // description:, 
-      // address:
-      // college_id: 
-      
-    // }
+    
+    const newListing = {
+      price: event.target.price.value, 
+      description: event.target.description.value,
+      address: event.target.address.value,
+      college_id: this.state.dropdownCollege
+    }
+
+
+    fetch("http://localhost:3001/listings", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newListing)
+    }).then(r => r.json())
+    .then(data => console.log(data))
   }
 
   render() {
@@ -48,29 +61,31 @@ class CreateListing extends Component {
 
             <div className="col">
               <div className="card m-5">
+
                 <form onSubmit={(event) => {this.submitHandler(event)}}>
-                  <div className="form-group">
-                    <label for="school-list">Select School</label>
-                    <select className="form-control" id="school-list">
-                      
-                     {this.state.collegeData.sort(function(a, b){return a.name-b.name}).map(college => <option value={college.id} id="one">{college.name}</option>)}
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" className="form-control" id="new-address" placeholder="Enter Address" />
-                  </div>
-                  <div className="form-group">
-                    <label for="price">Price/month:</label>
-                    <input type="text" className="form-control" id="new-price" placeholder="Enter Price/month" />
-                  </div>
-                  <div className="form-group">
-                    <label for="description">Description:</label>
-                    <input type="text" className="form-control" id="new-description" placeholder="Enter Description" />
-                  </div>
-                  <button type="submit" className="btn1">Submit</button>
+                    <div className="form-group">
+                      <label for="school-list">Select School</label>
+                      <select className="form-control" id="school-list" onChange={this.handleChange}>
+                        
+                      {this.state.collegeData.map(college => <option value={college.id} >{college.name}</option>)}
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label for="address">Address:</label>
+                      <input type="text" className="form-control" id="address" placeholder="Enter Address" />
+                    </div>
+                    <div className="form-group">
+                      <label for="price">Price/month:</label>
+                      <input type="text" className="form-control" id="price" placeholder="Enter Price/month" />
+                    </div>
+                    <div className="form-group">
+                      <label for="description">Description:</label>
+                      <input type="text" className="form-control" id="description" placeholder="Enter Description" />
+                    </div>
+                    <button type="submit" className="btn1">Submit</button>
                 </form>
-              </div>
+
+                </div>
             </div>
 
           </div>
