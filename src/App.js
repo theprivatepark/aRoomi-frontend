@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import Body from './containers/Body';
 import Header from './layouts/Header';
 import Login from './components/Login';
+import ListingsPage from './components/ListingsPage';
 import CreateAccount from './components/CreateAccount'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import './App.css';
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" exact component={Body}/> 
             <Route path="/login" component={Login}/>
             <Route path="/Create" component={CreateAccount}/>
+            <Route path="/Listings" component={ListingsPage}/>
         </Switch>
         </div>
       </Router>
