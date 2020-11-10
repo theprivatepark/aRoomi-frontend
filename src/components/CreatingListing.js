@@ -40,8 +40,8 @@ class CreateListing extends Component {
                   <div className="form-group">
                     <label for="school-list">Select School</label>
                     <select className="form-control" id="school-list">
-                      <option>1</option>
-                      <option>2</option>
+                      
+                     {this.state.collegeData.sort(function(a, b){return a.name-b.name}).map(college => <option>{college.name}</option>)}
                     </select>
                   </div>
                   <div className="form-group">
