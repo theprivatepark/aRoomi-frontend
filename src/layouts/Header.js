@@ -4,6 +4,7 @@ import image from '../assets/images/aroomi-logo.png'
 const Header = props => {
   return (
     <div className="container-fluid">
+
       <div className="row align-items-center">
         <div className="col">
           <img src={image} id="landing-page-img" />
@@ -24,6 +25,7 @@ const Header = props => {
             : null}
         </div>
       </div>
+      
     </div>
   )
 }

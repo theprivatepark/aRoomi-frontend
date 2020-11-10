@@ -26,3 +26,13 @@
   border: 1px solid;
   color: black;
 }
+
+/* listings page */
+#school-listings{
+  border-style: solid;
+}
+
+#listing-showpage {
+  border-style: solid;
+}
+
