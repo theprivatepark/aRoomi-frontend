@@ -19,9 +19,9 @@ const App = () => {
             <button onClick={onClickHandler}>TESTING Login/Logout!</button>
           <Switch>
             <Route path="/" exact component={Body}/> 
-            <Route path="/login" component={Login}/>
-            <Route path="/Create" component={CreateAccount}/>
-            <Route path="/Listings" component={ListingsPage}/>
+            <Route path="/login" exact component={Login}/>
+            <Route path="/Create" exact component={CreateAccount}/>
+            <Route path="/Listings" exact component={ListingsPage}/>
         </Switch>
         </div>
       </Router>

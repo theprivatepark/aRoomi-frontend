@@ -14,15 +14,15 @@ class CreateAccount extends Component {
       username: event.target.username.value,
       password: event.target.password.value
     }
-    
+
     fetch("http://localhost:3001/users", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newObj)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newObj)
     }).then(r => r.json())
-    .then(data => console.log(data))
+      .then(data => console.log(data))
 
   }
 
@@ -38,26 +38,26 @@ class CreateAccount extends Component {
               <h3 className="font-weight-bold py-3">Create Account</h3>
 
               <form onSubmit={(e) => this.submitHandler(e)}>
-              <div class="form-group">
+                <div class="form-group">
                   <label for="firstname">First Name</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="Enter First Name"/>
+                  <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" />
                 </div>
 
                 <div class="form-group">
                   <label for="lastname">Last Name</label>
-                  <input type="text" class="form-control" id="lastname"placeholder="Enter Last Name"/>
+                  <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" />
                 </div>
 
                 <div class="form-group">
                   <label for="Username">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Enter Username"/>
+                  <input type="text" class="form-control" id="username" placeholder="Enter Username" />
                 </div>
 
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="*******"/>
+                  <input type="password" class="form-control" id="password" placeholder="*******" />
                 </div>
-              
+
                 <button type="submit" class="btn1">Submit</button>
               </form>
 

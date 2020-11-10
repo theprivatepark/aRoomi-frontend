@@ -1,14 +1,14 @@
 import React from 'react';
+import SchoolListings from './SchoolListings';
+import SingleListing from './SingleListing';
 
 const ListingsPage = () => {
   return (
-    <div className="container" id="listing">
-
-      <div class="row">
-        <div class="col-4" id="school-listings">school listings</div>
-        <div class="col-8" id="listing-showpage">one listing showpage</div>
+    <div className="container">
+      <div className="row">
+        <SchoolListings />
+        <SingleListing/>
       </div>
-
     </div>
   )
 }
