@@ -13,11 +13,11 @@ const Header = props => {
         </div>
         <div className="col-3">
           {props.isLoggedIn ? <div className="align-right">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-primary">
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+              <label className="btn btn-primary">
                 <input type="radio" /> Profile
               </label>
-              <label class="btn btn-link">
+              <label className="btn btn-link">
                 <input type="radio" /> Create Listing
               </label>
             </div>

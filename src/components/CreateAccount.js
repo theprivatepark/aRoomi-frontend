@@ -32,33 +32,33 @@ class CreateAccount extends Component {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-5">
-              <img src={image} class="img-fluid" alt="" />
+              <img src={image} className="img-fluid" alt="" />
             </div>
             <div className="col-lg-7 px-5 pt-5">
               <h3 className="font-weight-bold py-3">Create Account</h3>
 
               <form onSubmit={(e) => this.submitHandler(e)}>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="firstname">First Name</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" />
+                  <input type="text" className="form-control" id="firstname" placeholder="Enter First Name" />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label for="lastname">Last Name</label>
-                  <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" />
+                  <input type="text" className="form-control" id="lastname" placeholder="Enter Last Name" />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label for="Username">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Enter Username" />
+                  <input type="text" className="form-control" id="username" placeholder="Enter Username" />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="*******" />
+                  <input type="password" className="form-control" id="password" placeholder="*******" />
                 </div>
 
-                <button type="submit" class="btn1">Submit</button>
+                <button type="submit" className="btn1">Submit</button>
               </form>
 
             </div>

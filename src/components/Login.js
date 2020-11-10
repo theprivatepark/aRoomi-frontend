@@ -8,7 +8,7 @@ const Login = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-5">
-            <img src={image} class="img-fluid" alt=""/>
+            <img src={image} className="img-fluid" alt=""/>
           </div>
           <div className="col-lg-7 px-5 pt-5">
             <h4 className="font-weight-bold py-3">Sign into your account</h4>
