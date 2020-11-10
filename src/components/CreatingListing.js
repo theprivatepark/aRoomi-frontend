@@ -16,6 +16,18 @@ class CreateListing extends Component {
     })
   }
 
+  submitHandler = (event) => {
+    event.preventDefault()
+    console.log(event.target.price.value)
+    // const newListingObj = {
+      // price: event.target,
+      // description:, 
+      // address:
+      // college_id: 
+      
+    // }
+  }
+
   render() {
     return (
       <div className="container">
@@ -36,12 +48,12 @@ class CreateListing extends Component {
 
             <div className="col">
               <div className="card m-5">
-                <form>
+                <form onSubmit={(event) => {this.submitHandler(event)}}>
                   <div className="form-group">
                     <label for="school-list">Select School</label>
                     <select className="form-control" id="school-list">
                       
-                     {this.state.collegeData.sort(function(a, b){return a.name-b.name}).map(college => <option>{college.name}</option>)}
+                     {this.state.collegeData.sort(function(a, b){return a.name-b.name}).map(college => <option value={college.id} id="one">{college.name}</option>)}
                     </select>
                   </div>
                   <div className="form-group">
