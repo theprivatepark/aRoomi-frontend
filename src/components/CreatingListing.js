@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+
+
 
 class CreateListing extends Component {
 
   state = {
     collegeData: [],
-    dropdownCollege: ""
+    dropdownCollege: "",
+    isSubmitted: false
   }
 
   componentDidMount() {
@@ -21,7 +25,6 @@ class CreateListing extends Component {
     this.setState({ dropdownCollege: e.target.value })
   }
 
-
   submitHandler = (event) => {
     event.preventDefault()
     
@@ -33,15 +36,19 @@ class CreateListing extends Component {
     }
 
 
-    fetch("http://localhost:3001/listings", {
+    return fetch("http://localhost:3001/listings", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(newListing)
-    }).then(r => r.json())
-    .then(data => console.log(data))
+    })
+    .then(r => r.json())
+    .then(data => {this.setState({isSubmitted:!this.state.isSubmitted})})
   }
 
   render() {
+    if (this.state.isSubmitted) {
+      return <Redirect to={'/'}/>
+    }
     return (
       <div className="container">
         <div className="card m-5">
