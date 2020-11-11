@@ -1,5 +1,6 @@
 import React from 'react';
 import CarouselImg from './CarouselImg';
+import { Link } from "react-router-dom";
 
 const ListingShow = () => {
   return (
@@ -9,7 +10,9 @@ const ListingShow = () => {
           <div className="row align-items-center">
             <div className="col-3">
               LISTING OWNER'S PHOTO HERE
+              <Link to="/profile">
               <button type="button" class="btn btn-outline-warning">View Profile</button>
+              </Link>
             </div>
             <div className="col">
               <CarouselImg/>         
