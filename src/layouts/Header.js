@@ -1,13 +1,17 @@
 import React from 'react';
 import image from '../assets/images/aroomi-logo.png'
+import { Link } from "react-router-dom";
+
 
 const Header = props => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-3">
 
       <div className="row align-items-center">
         <div className="col">
-          <img src={image} id="landing-page-img" />
+          <Link to="/">
+          <img src={image} id="aroomi-logo" alt=""/>
+          </Link>
         </div>
         <div className="col-8">
         </div>

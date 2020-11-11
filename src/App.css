@@ -7,6 +7,10 @@
   height: auto;
 }
 
+#aroomi-logo {
+  width: 150%;
+}
+
 .align-right {
   text-align: end;
 }
