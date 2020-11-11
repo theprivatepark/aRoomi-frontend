@@ -4,7 +4,8 @@ import SingleListing from './SingleListing'
 const SchoolListings = props => {
 
   let filtered = props.listingsData.filter(listing =>  listing.college_id === props.searchedSchool )
-
+console.log(props.searchedSchool)
+  console.log(filtered)
   return (
     <div className="col-lg-3">
       <div className="card mt-4" id="listings-container">

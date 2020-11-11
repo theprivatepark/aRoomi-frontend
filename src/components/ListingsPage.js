@@ -12,5 +12,4 @@ const ListingsPage = props => {
     </div>
   )
 }
-
-export default ListingsPage;
+ export default ListingsPage;
