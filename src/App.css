@@ -5,10 +5,11 @@
 #landing-page-img {
   width: 100%;
   height: auto;
+  border-radius: 20px;
 }
 
 #aroomi-logo {
-  width: 150%;
+  width: 100%;
 }
 
 .align-right {
@@ -64,4 +65,10 @@
 
 #listings-container {
   height: 600px;
+}
+
+#fb-logo {
+  width: 60px;
+  
+  
 }

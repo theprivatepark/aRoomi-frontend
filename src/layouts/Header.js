@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../assets/images/aroomi-logo.png'
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
 
 
 const Header = props => {
@@ -10,7 +11,7 @@ const Header = props => {
       <div className="row align-items-center">
         <div className="col">
           <Link to="/">
-          <img src={image} id="aroomi-logo" alt=""/>
+            <img src={image} id="aroomi-logo" alt="" />
           </Link>
         </div>
         <div className="col-8">
@@ -18,17 +19,19 @@ const Header = props => {
         <div className="col-3">
           <div className="align-right">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
-              <label className="btn btn-primary">
-                <input type="radio" /> Profile
-              </label>
-              <label className="btn btn-link">
-                <Link to="/createlisting">
-                <input type="radio" /> Create Listing
+              <Button variant="light">
+                <Link to="/profile">
+                  <input type="radio" /> Profile
                 </Link>
-              </label>
-              <label className="btn btn-link">
+              </Button>
+                <Button variant="light">
+                <Link to="/createlisting">
+                  <input type="radio" /> Create Listing
+                </Link>
+              </Button>
+                <Button variant="light">
                 <input type="radio" /> Logout
-              </label>
+              </Button>
             </div>
           </div>
         </div>
