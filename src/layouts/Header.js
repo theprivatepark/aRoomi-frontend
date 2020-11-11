@@ -22,7 +22,9 @@ const Header = props => {
                 <input type="radio" /> Profile
               </label>
               <label className="btn btn-link">
+                <Link to="/createlisting">
                 <input type="radio" /> Create Listing
+                </Link>
               </label>
               <label className="btn btn-link">
                 <input type="radio" /> Logout
