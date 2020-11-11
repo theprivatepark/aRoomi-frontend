@@ -46,7 +46,7 @@ class SearchPage extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <Image src={image} />
+            <Image src={image} id="landing-page-img" />
           </div>
         </div>
       </>

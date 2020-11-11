@@ -5,6 +5,7 @@ import Login from './components/Login';
 import ListingsPage from './components/ListingsPage';
 import CreateAccount from './components/CreateAccount';
 import CreateListing from './components/CreatingListing';
+import ProfilePage from './components/ProfilePage';
 import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -40,9 +41,10 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => this.state.searchedSchool ? <Redirect to='/listings'/> : <Body handleChange={this.handleChange} />} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/Create" component={CreateAccount} />
+          <Route exact path="/createaccount" component={CreateAccount} />
           <Route exact path="/listings" render={() => <ListingsPage searchedSchool={this.state.searchedSchool} listingsData={this.state.listingsData} />} />
-          <Route exact path="/CreateListing" component={CreateListing} />
+          <Route exact path="/createlisting" component={CreateListing} />
+          <Route exact path="/profile" component={ProfilePage} />
         </Switch>
       </div>
 
