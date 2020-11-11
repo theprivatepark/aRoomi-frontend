@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import image from '../assets/images/ourlogo.png';
-// import { Link }from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 class CreateAccount extends Component {
 
+  state = {
+    isCreated: false
+  }
 
   submitHandler = (event) => {
     event.preventDefault()
@@ -15,18 +18,22 @@ class CreateAccount extends Component {
       password: event.target.password.value
     }
 
-    fetch("http://localhost:3001/users", {
+    return fetch("http://localhost:3001/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newObj)
-    }).then(r => r.json())
-      .then(data => console.log(data))
+    })
+    .then(r => r.json())
+    .then(data => this.setState({isCreated: true}))
 
   }
 
   render() {
+    if (this.state.isCreated) {
+      return <Redirect to={'/'}/>
+    }
     return (
       <section className="Form my-4 mx-5">
         <div className="container">

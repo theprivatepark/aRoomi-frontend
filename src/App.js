@@ -13,21 +13,41 @@ class App extends Component {
 
   state = {
     searchedSchool: null,
-    listingsData: []
+    listingsData: [],
+    isLoggedIn: false,
+    user: {}
   }
 
   componentDidMount = () => {
     fetch("http://localhost:3001/listings")
       .then(response => response.json())
       .then((listingData) => this.setState({ listingsData: listingData }))
+      
   }
 
   handleChange = (e) => {
     this.setState({
       searchedSchool: e.value
     })
-
   }
+
+  setCurrentUser = (userData) => {
+    this.setState({ 
+      user: userData.user,
+      isLoggedIn: true
+     })
+  }
+    
+  handleLogout = () => {
+    this.setState({
+    isLoggedIn: false,
+    user: {}
+    })
+  }
+
+
+
+
   render() {
     // if (this.state.searchedSchool) {
     //   return <Redirect to={'/listings'}/>
@@ -39,7 +59,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" render={() => this.state.searchedSchool ? <Redirect to='/listings'/> : <Body handleChange={this.handleChange} />} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" render={() => this.state.isLoggedIn ? <Body handleChange={this.handleChange} /> : <Login setCurrentUser={this.setCurrentUser} />} />
           <Route exact path="/Create" component={CreateAccount} />
           <Route exact path="/listings" render={() => <ListingsPage searchedSchool={this.state.searchedSchool} listingsData={this.state.listingsData} />} />
           <Route exact path="/CreateListing" component={CreateListing} />
