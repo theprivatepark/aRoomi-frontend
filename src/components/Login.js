@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import image from '../assets/images/ourlogo.png';
-// import { Link }from 'react-router-dom';
+import { Link }from 'react-router-dom';
 
 class Login extends Component {
 
@@ -78,7 +78,9 @@ class Login extends Component {
                     <button type="submit" className="btn1" mt-3>Login</button>
                   </div>
                 </div>
+                <Link to='/createaccount'>
                 <p>Don't have an account? <a href="#">Register Here</a></p>
+                </Link>
               </form>
   
             </div>
