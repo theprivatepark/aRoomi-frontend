@@ -18,6 +18,7 @@ class ListingsPage extends Component {
   return (
     <div className="container">
       <div className="row">
+       
         <SchoolListings searchedSchool={this.props.searchedSchool} listingsData={this.props.listingsData} clickedListingHandler={this.clickedListingHandler}/>
         {this.state.clickedListing ? <ListingShow clickedListing={this.state.clickedListing}/> 
         : 
