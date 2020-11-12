@@ -8,7 +8,7 @@ class ProfilePage extends Component {
     return (
       <div className="container-fluid">
         <Link to="/listings">
-        <button type="button" class="btn btn-outline-warning">Back to Listing</button>
+          <button type="button" class="btn btn-outline-warning">Back to Listing</button>
         </Link>
         <div className="card m-5">
           <div className="row m-5">
@@ -19,17 +19,56 @@ class ProfilePage extends Component {
             </div>
 
             <div className="col-md-7">
-              <p className="lead">
-                <h2>Name: </h2>
-                <p id="biography">Biography:</p>
-                <p id="age">Age:</p>
-                <p id="gender">Gender:</p>
-                <p id="has_pets">Has Pets:</p>
-                <p id="smoker">Smoker:</p>
-                <p id="allergies">Allergies:</p>
-                <p id="weekend_activities">Weekend Activities:</p>
-                <p id="able_to_meet_payments">Able to Meet Payments:</p>
-              </p>
+              <form>
+                <div className="form-group">
+                  <p className="lead">
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Biography:</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Has Pets:</label>
+                      <select className="form-control" id="exampleFormControlSelect1">
+                        <option>True</option>
+                        <option>False</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Smoker:</label>
+                      <select className="form-control" id="exampleFormControlSelect1">
+                        <option>True</option>
+                        <option>False</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Gender:</label>
+                      <select className="form-control" id="exampleFormControlSelect1">
+                        <option>Female</option>
+                        <option>Male</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="allergies">Allergies:</label>
+                      <input type="text" class="form-control" id="allergies" />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Able to Meet Payments On Time:</label>
+                      <select className="form-control" id="exampleFormControlSelect1">
+                        <option>True</option>
+                        <option>False</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Weekend Activites:</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+
+                  </p>
+                </div>
+                <button type="submit" className="btn1">Submit</button>
+
+              </form>
 
             </div>
 

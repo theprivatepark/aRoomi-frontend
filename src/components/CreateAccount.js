@@ -32,7 +32,7 @@ class CreateAccount extends Component {
 
   render() {
     if (this.state.isCreated) {
-      return <Redirect to={'/'}/>
+      return <Redirect to={'/profile'}/>
     }
     return (
       <section className="Form my-4 mx-5">

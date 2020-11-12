@@ -2,11 +2,12 @@ import React from 'react';
 
 const SingleListing = props => {
   return (
-    <div className="container">
-      <p>{props.listing.address}</p>
-      <p>{props.listing.description}</p>
-      <p>{props.listing.price}</p>
-
+    <div className="card m-3" onClick={() => props.clickedListingHandler(props.listing)}>
+     
+        <p>Address: {props.listing.address}</p>
+        <p>Description: {props.listing.description}</p>
+        <p>Price/month: ${props.listing.price}</p>
+     
     </div>
   )
 }

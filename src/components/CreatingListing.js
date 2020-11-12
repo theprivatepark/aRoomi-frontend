@@ -47,7 +47,7 @@ class CreateListing extends Component {
 
   render() {
     if (this.state.isSubmitted) {
-      return <Redirect to={'/'}/>
+      return <Redirect to={'/listings'}/>
     }
     return (
       <div className="container">
