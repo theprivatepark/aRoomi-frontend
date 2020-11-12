@@ -6,10 +6,10 @@ const SchoolListings = props => {
   return (
     <div className="col-lg-3">
       <div className="card mt-4" id="listings-container">
-        <h1 className="m-4">Listings</h1>
+        <h3 className="m-4">Listings</h3>
         <div className="nav anyClass">
           
-          {filtered.map(listing => <SingleListing listing={listing} clickedListingHandler={props.clickedListingHandler}/>)}
+          {filtered.map(listing => <SingleListing key={listing.id} listing={listing} clickedListingHandler={props.clickedListingHandler}/>)}
         
         </div>
       </div>

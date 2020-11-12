@@ -46,6 +46,11 @@ class App extends Component {
     })
   }
 
+  logout = () => {
+    fetch("http://localhost:3001/logout")
+    .then(response => response.json())
+    .then(console.log)
+  }
 
 
 
@@ -57,7 +62,7 @@ class App extends Component {
     return (
 
       <div className="App">
-        <Header />
+        <Header logout={this.logout}/>
         <Switch>
           <Route exact path="/" render={() => this.state.searchedSchool ? <Redirect to='/listings'/> : <Body handleChange={this.handleChange} />} />
           <Route exact path="/login" render={() => this.state.isLoggedIn ? <Body handleChange={this.handleChange} /> : <Login setCurrentUser={this.setCurrentUser} />} />
@@ -65,6 +70,7 @@ class App extends Component {
           <Route exact path="/listings" render={() => <ListingsPage searchedSchool={this.state.searchedSchool} listingsData={this.state.listingsData} />} />
           <Route exact path="/createlisting" component={CreateListing} />
           <Route exact path="/profile" component={ProfilePage} />
+        
         </Switch>
       </div>
 

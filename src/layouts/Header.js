@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 
 
+
 const Header = props => {
   return (
     <div className="container-fluid mt-3">
@@ -29,9 +30,11 @@ const Header = props => {
                   <input type="radio" /> Create Listing
                 </Link>
               </Button>
-                <Button variant="light">
+
+                <Button variant="light" onClick={props.logout}>
                 <input type="radio" /> Logout
               </Button>
+
             </div>
           </div>
         </div>

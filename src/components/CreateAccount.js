@@ -25,14 +25,19 @@ class CreateAccount extends Component {
       },
       body: JSON.stringify(newObj)
     })
-    .then(r => r.json())
-    .then(data => this.setState({isCreated: true}))
-
+      .then(r => r.json())
+      .then(data => {
+        if (!data.errors){
+        this.setState({ isCreated: true })}
+        else {
+          alert(data.info)
+        }
+      })
   }
 
   render() {
     if (this.state.isCreated) {
-      return <Redirect to={'/profile'}/>
+      return <Redirect to={'/profile'} />
     }
     return (
       <section className="Form my-4 mx-5">

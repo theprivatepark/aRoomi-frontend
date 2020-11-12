@@ -20,12 +20,14 @@ const ListingShow = props => {
           </div>
         </div>
         <div className="card-body">
-          <h3 className="card-title">Room Header</h3>
-          <p>Description: {props.clickedListing.description}</p>
-          <p>Address:</p>
-          <p>College:</p>
-          <p>Price:</p>
+          <p id="listing-key">Description:</p>
+          {props.clickedListing.description}
           <p></p>
+          <p id="listing-key">Address:</p>
+          {props.clickedListing.address}
+          <p></p>
+          <p id="listing-key">Price/month: </p>
+          ${props.clickedListing.price}
         </div>
       </div>
     </div>
