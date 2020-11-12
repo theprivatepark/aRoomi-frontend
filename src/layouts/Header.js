@@ -32,7 +32,9 @@ const Header = props => {
               </Button>
 
                 <Button variant="light" onClick={props.logout}>
+                  <Link to="/login">
                 <input type="radio" /> Logout
+                </Link>
               </Button>
 
             </div>

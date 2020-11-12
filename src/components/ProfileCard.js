@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const ProfileCard = () => {
   return(
@@ -50,8 +51,9 @@ const ProfileCard = () => {
 
                   </p>
                 </div>
+                <Link to="/">
                 <button type="submit" className="btn1">Submit</button>
-
+                </Link>
               </form>
     </div>
   )
