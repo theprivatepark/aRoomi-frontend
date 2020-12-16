@@ -23,6 +23,7 @@ A user can click on a listing and view the listing details as well as see all of
 <br/>
 
 A user can post a new listing. <br/>
+![aroomi create a listing](https://user-images.githubusercontent.com/69116393/102390982-19ccbf80-3fa3-11eb-8a70-34e7b194cc94.gif)
 
 <br/>
 <br/>
