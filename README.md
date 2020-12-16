@@ -17,6 +17,7 @@ A user can search through a list of colleges and find all of the listings there.
 <br/>
 
 A user can click on a listing and view the listing details as well as see all of the pictures of the room/house. <br/>
+![aroomi listing](https://user-images.githubusercontent.com/69116393/102390866-f4d84c80-3fa2-11eb-869a-7874c5cbcc52.gif)
 
 <br/>
 <br/>
