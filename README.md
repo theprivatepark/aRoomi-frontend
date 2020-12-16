@@ -10,7 +10,8 @@ aRoomi is a platform for college students to find a roommate quickly that goes t
 
 
 
-A user can search through a list of colleges and find all of the listings there <br/>
+A user can search through a list of colleges and find all of the listings there. <br/>
+![aroomi search](https://user-images.githubusercontent.com/69116393/102390672-b5a9fb80-3fa2-11eb-998f-a67e2306b0b8.gif)
 
 <br/>
 <br/>
